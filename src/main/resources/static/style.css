@@ -1,0 +1,27 @@
+body {background: #f8f9fa; font-family: 'Montserrat', sans-serif;}
+a {color: inherit}
+a:hover {color: inherit; text-decoration: none;}
+
+
+nav {background: #ced4da; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; }
+.tit-app {font-weight: 800; color: #043465}
+.menu-nav li{color: #166DB7; font-weight: 600; font-size: 1em }
+.menu-nav li:hover {background: #166DB7; color: #FFF; border-radius: 0.3em}
+
+.acessos-menu li{color: #166DB7; font-weight: 600; font-size: 1em }
+.acessos-menu li:hover {background: #166DB7; color: #FFF; border-radius: 0.3em}
+
+h2.sub-tit {font-size: 1.8em; font-weight: 600; padding-bottom: 0.5em}
+.alerta {padding: 1em; margin: 1em; background: #780000; border: 0.3em solid #c1121f; border-radius: 0.3em; color: #FFF}
+
+input, select {width: 100%; border: 0; padding: 0.8em; background: #e9ecef; border-radius: 0.3em}
+
+
+.btn-light {color: #166DB7; font-weight: 600; font-size: 1em; background: #ced4da; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; border: 0em; padding: 0.8em; border-radius: 0.3em; width: 100%}
+.btn-light:hover {color: #FFF; background: #166DB7;}
+
+.btn-dark {color: #FFF; font-weight: 600; font-size: 1em; background: #166DB7; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; border: 0em; padding: 0.8em; border-radius: 0.3em; width: 100%}
+.btn-dark:hover {color:#166DB7; background: #ced4da;}
+
+footer{background: rgb(4, 52, 101, 0.7);}
+footer h3 {font-size: 0.8em; font-weight: 800; color:  #f8f9fa}
