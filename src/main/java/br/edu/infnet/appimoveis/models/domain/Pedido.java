@@ -26,7 +26,7 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
-	private boolean web;
+	private boolean financiamento;
 	private LocalDateTime data;
 	@OneToOne(cascade = CascadeType.DETACH) 
 	@JoinColumn(name = "idSolicitante")
@@ -64,7 +64,7 @@ public class Pedido {
 		System.out.println("Qtde Imoveis: " + imoveis.size());
 		System.out.println("Imoveis:");
 		for(Imovel p : imoveis) {
-			System.out.println("- " + p.getNome());
+			System.out.println("- " + p.getProntaEntrega());
 		}
 	}
 	
@@ -84,7 +84,7 @@ public class Pedido {
 		
 		return  String.format("%s;%s;%s", 
 				descricao, 
-				web ? "web" : "loja",  
+				financiamento ? "financiamento" : "À vista",  
 				data.format(formato)
 			);
 	}
@@ -105,12 +105,12 @@ public class Pedido {
 		this.descricao = descricao;
 	}
 
-	public boolean isWeb() {
-		return web;
+	public boolean isFinanciamento() {
+		return financiamento;
 	}
 
-	public void setWeb(boolean web) {
-		this.web = web;
+	public void setFinanciamento(boolean financiamento) {
+		this.financiamento = financiamento;
 	}
 
 	public LocalDateTime getData() {

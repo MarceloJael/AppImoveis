@@ -2,7 +2,9 @@ package br.edu.infnet.appimoveis.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
@@ -44,7 +46,29 @@ public class UsuarioController {
 		
 		msg = "O" + usuario.getNome()+ "foi cadastro com sucesso!";
 		
-		return "redirect:/";
+		return "redirect:login";
+	}
+	
+	@GetMapping(value = "/lista-usuario")
+	public String telaLista(Model model) {
+		
+		model.addAttribute("usuarios", usuarioService.obterLista());
+		
+		model.addAttribute("mensagem", msg);
+		
+		msg = null;
+		
+		return "usuario/lista";
+	}
+	
+	@GetMapping(value = "/usuario/{id}/excluir")
+	public String excluir(@PathVariable Integer id) {
+
+		usuarioService.excluir(id);
+		
+		msg = "Usuario "+ id+" foi excluido.";
+
+		return "redirect:/lista-usuario";
 	}
 
 }

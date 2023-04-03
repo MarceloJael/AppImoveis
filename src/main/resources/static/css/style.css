@@ -11,11 +11,23 @@ nav {background: #ced4da; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; }
 .acessos-menu li{color: #166DB7; font-weight: 600; font-size: 1em }
 .acessos-menu li:hover {background: #166DB7; color: #FFF; border-radius: 0.3em}
 
-h2.sub-tit {font-size: 1.8em; font-weight: 600; padding-bottom: 0.5em}
+h2.sub-tit {font-size: 1.8em; font-weight: 600; padding-bottom: 0.5em; color: #043465}
 .alerta {padding: 1em; margin: 1em; background: #780000; border: 0.3em solid #c1121f; border-radius: 0.3em; color: #FFF}
+.alerta-correto {padding: 1em; margin: 1em; background: #004b23; border: 0.3em solid #007200; border-radius: 0.3em; color: #FFF}
+.alerta-info {padding: 1em; margin: 1em; background: #ee9b00; border: 0.3em solid #ffba08; border-radius: 0.3em; color: #FFF}
 
 input, select {width: 100%; border: 0; padding: 0.8em; background: #e9ecef; border-radius: 0.3em}
 
+.home-menus {background: #043465; border: 0.3em solid #166DB7; padding: 1em; color: #FFF; font-size: 1.3em}
+.home-menus:hover {background: #166DB7; border: 0.3em solid #043465; color: #FFF}
+
+table {width: 100%}
+thead {background: #043465}
+thead th{padding: 0.5em; color: #FFF; font-weight: 600; font-size: 0.7em; text-align: center;}
+
+tbody th {font-size: 0.7em; font-weight: 400}
+tr:hover{background: #e5e5e5;}
+th{text-alight: center;}
 
 .btn-light {color: #166DB7; font-weight: 600; font-size: 1em; background: #ced4da; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; border: 0em; padding: 0.8em; border-radius: 0.3em; width: 100%}
 .btn-light:hover {color: #FFF; background: #166DB7;}

@@ -1,13 +1,11 @@
 package br.edu.infnet.appimoveis.models.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import br.edu.infnet.appimoveis.model.exceptions.ClienteInvalidoException;
@@ -25,9 +23,6 @@ public class Cliente {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
-	@OneToOne(cascade = CascadeType.PERSIST) 
-	@JoinColumn(name = "idEndereco")
-	private EnderecoModels endereco;
 	
 	public Cliente() {
 	}
@@ -104,14 +99,6 @@ public class Cliente {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	public EnderecoModels getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(EnderecoModels endereco) {
-		this.endereco = endereco;
 	}
 	
 }

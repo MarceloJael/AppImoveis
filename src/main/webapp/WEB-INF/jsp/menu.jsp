@@ -20,7 +20,7 @@
 		<script src="https://kit.fontawesome.com/5bdb09f0fb.js" crossorigin="anonymous"></script>
 		
 		<!-- Style CSS -->
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
 		
 	    <title>AppImoveis</title>
 	</head>
@@ -37,13 +37,13 @@
 			    <ul class="nav navbar-nav text-center menu-nav">
 	    			<li class="active nav-item p-1 m-1"><a href="/">Home</a></li>
 	    			<c:if test="${not empty usuario}">
-						<li class="nav-item p-1 m-1"><a href="#">Users</a></li>	
-		      			<li class="nav-item p-1 m-1"><a href="#">Clientes</a></li>
-						<li class="nav-item p-1 m-1"><a href="#">Imoveis</a></li>
-						<li class="nav-item p-1 m-1"><a href="#">Casas</a></li>
-						<li class="nav-item p-1 m-1"><a href="#">Apartamentos</a></li>
-						<li class="nav-item p-1 m-1"><a href="#">Fazendas</a></li>
-						<li class="nav-item p-1 m-1"><a href="#">Pedidos</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-usuario">Users</a></li>	
+		      			<li class="nav-item p-1 m-1"><a href="/lista-cliente">Clientes</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-imovel">Imoveis</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-casa">Casas</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-apartamento">Apartamentos</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-fazenda">Fazendas</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-pedido">Pedidos</a></li>
 					</c:if>
 	    		</ul>
 	    		
@@ -54,7 +54,7 @@
 					</c:if>
 					
 					<c:if test="${not empty usuario}">
-				      <li class="nav-item p-1 m-1"><a href="/logout"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Sair</a></li>
+				      <li class="nav-item p-1 m-1"><a href="/logout"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Sair, ${usuario.nome}</a></li>
 				     </c:if>
 				      
 	    		</ul>

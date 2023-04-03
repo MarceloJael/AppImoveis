@@ -15,5 +15,10 @@ public class IndexController {
 	public String pagHome() {
 		return "index";
 	}
+	
+	@GetMapping(value = "*")
+	public String pagErro() {
+		return "index";
+	}
 
 }
