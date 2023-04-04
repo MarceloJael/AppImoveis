@@ -29,7 +29,7 @@ public class Pedido {
 	private boolean financiamento;
 	private LocalDateTime data;
 	@OneToOne(cascade = CascadeType.DETACH) 
-	@JoinColumn(name = "idSolicitante")
+	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
 	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Imovel> imoveis;
@@ -49,7 +49,7 @@ public class Pedido {
 		}
 		
 		if(imoveis == null) {
-			throw new PedidoSemClienteException("Não existe nenhum imovel associado a esse pedido");
+			throw new PedidoSemImovelException("Não existe nenhum imovel associado a esse pedido");
 		}
 
 		this.cliente = cliente;
@@ -64,7 +64,7 @@ public class Pedido {
 		System.out.println("Qtde Imoveis: " + imoveis.size());
 		System.out.println("Imoveis:");
 		for(Imovel p : imoveis) {
-			System.out.println("- " + p.getProntaEntrega());
+			System.out.println("- " + p.getId());
 		}
 	}
 	
@@ -125,7 +125,7 @@ public class Pedido {
 		return cliente;
 	}
 
-	public void setSolicitante(Cliente cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 

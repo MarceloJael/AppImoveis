@@ -6,7 +6,7 @@
    	<c:if test="${empty usuario}">
    	<div class="container">
     	<div class="row">
-    		<div class="d-flex align-items-center" style="height: 100vh; width: 100vw">
+    		<div class="d-flex align-items-center" style="height: 80vh; width: 80vw">
     			<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12 mx-auto py-2 text-center alerta">
     				Faça seu login pra continuar!
     			</div>
@@ -22,24 +22,24 @@
 	    	<div class="row">
 	    		
 	    		<div class="col-xl-12 col-lg-12 col-sm-12 col-md-12 mx-auto text-center home-menus">	
-	    			<i class="fa-solid fa-shop"></i> IMOVEIS
+	    			<a href="lista-imovel"><i class="fa-solid fa-shop"></i> IMOVEIS</a>
 	    		</div>
 	    		
 	    		<div class="w-100"></div>
 	    		
 	    		<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 mx-auto text-center home-menus">
-	    			<i class="fa-solid fa-house"></i> <br>
-	    			CASA
+	    			<a href="lista-casa"><i class="fa-solid fa-house"></i> <br>
+	    			CASA</a>
 	    		</div>
 	    		
 	    		<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 mx-auto text-center home-menus">
-	    			<i class="fa-sharp fa-solid fa-building"></i><br>
-	    			APARTAMENTO
+	    			<a href="lista-apartamento"><i class="fa-sharp fa-solid fa-building"></i><br>
+	    			APARTAMENTO</a>
 	    		</div>
 	    		
 	    		<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 mx-auto text-center home-menus">
-	    			<i class="fa-solid fa-tree-city"></i><br>
-	    			FAZENDA
+	    			<a href="lista-fazenda"><i class="fa-solid fa-tree-city"></i><br>
+	    			FAZENDA</a>
 	    		</div>
 	    		
 	    	</div>

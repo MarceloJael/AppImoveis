@@ -29,7 +29,6 @@
 				<tr>
 					<th>ID</th>
 					<th>Codigo</th>
-					<th>Pronta Entrega</th>
 					<th>Valor</th>
 					<th>Usuario</th>
 			      	<c:if test="${usuario.cargo == 'administrador'}">		      
@@ -43,7 +42,6 @@
 				<tr>
 					<th>${list.id}</th>
 					<th>${list.codigo}</th>
-					<th>${list.prontaentrega}</th>
 					<th>${list.valor}</th>
 					<th>${list.usuario.nome}</th>
 					<c:if test="${usuario.cargo == 'administrador'}">

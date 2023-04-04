@@ -6,7 +6,9 @@
     <div class="container">
     	<div class="row text-center">
     		
-    		<h2 class="text-center sub-tit">Cadastrar cliente</h2>
+    		<div class="col-12">
+    			<h2 class="text-center sub-tit">Cadastrar cliente</h2>
+    		</div>
     	
     		<div class="p-3 m-3 text-center">			
 

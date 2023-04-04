@@ -45,7 +45,7 @@ public class ClienteController {
 
 		clienteService.incluir(cliente);
 		
-		msg = "O "+cliente.getNome()+" foi cadastrado com sucesso!";
+		msg = "O(A) "+cliente.getNome()+" foi cadastrado com sucesso!";
 		
 		return "redirect:/lista-cliente";
 	}

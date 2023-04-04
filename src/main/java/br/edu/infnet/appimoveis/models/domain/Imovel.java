@@ -26,7 +26,6 @@ public abstract class Imovel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String codigo;
-	private boolean prontaentrega;
 	private float valor;
 	
 	@ManyToOne
@@ -40,7 +39,7 @@ public abstract class Imovel {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Imovel(String codigo, boolean prontaentrega, float valor) throws ValorZeradoException {
+	public Imovel(String codigo, float valor) throws ValorZeradoException {
 		
 		if(valor == 0) {
 			throw new ValorZeradoException("O imovel está sem valor!");
@@ -51,7 +50,6 @@ public abstract class Imovel {
 		}
 
 		this.codigo = codigo;
-		this.prontaentrega = prontaentrega;
 		this.valor = valor;
 	}
 	
@@ -63,8 +61,6 @@ public abstract class Imovel {
 		StringBuilder sb = new StringBuilder();
 		sb.append(codigo);
 		sb.append(";");
-		sb.append(prontaentrega);
-		sb.append(";");
 		sb.append(valor);
 
 		return sb.toString();
@@ -72,9 +68,6 @@ public abstract class Imovel {
 	
 	public String getCodigo() {
 		return codigo;
-	}
-	public boolean getProntaEntrega() {
-		return prontaentrega;
 	}
 	public float getValor() {
 		return valor;
@@ -90,10 +83,6 @@ public abstract class Imovel {
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
-	}
-
-	public void setProntaEntrega(boolean prontaentrega) {
-		this.prontaentrega = prontaentrega;
 	}
 
 	public void setValor(float valor) {
