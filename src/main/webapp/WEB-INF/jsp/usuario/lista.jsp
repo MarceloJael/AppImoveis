@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
@@ -23,6 +23,7 @@
 			</c:if>
 			
 			<h2 class="text-center sub-tit">Lista de usuarios</h2>
+
 			
 			<table>
 			
@@ -47,6 +48,8 @@
 					</tr>
 				</thead>
 				
+
+				
 				<tbody>
 					<c:forEach var="list" items="${usuarios}">
 					<tr>
@@ -63,7 +66,10 @@
 						<th>${list.clientes.size()}</th>
 						<th>${list.imoveis.size()}</th>
 						<th>${list.pedidos.size()}</th>
-						<c:if test="${usuario.cargo == 'administrador'}">
+						<c:if test="${usuario.cargo == 'administrador' and list.id == usuario.id}">
+							<th class="alerta-correto text-center"><i class="fa-sharp fa-solid fa-user"></i> USER LOGADO</th>
+						</c:if>
+						<c:if test="${usuario.cargo == 'administrador' and list.id != usuario.id}">
 							<th class="alerta text-center"><a href="/usuario/${list.id}/excluir"><i class="fa-sharp fa-solid fa-trash"></i> Excluir</a></th>
 						</c:if>
 					</tr>

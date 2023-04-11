@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.edu.infnet.appimoveis.model.service.UsuarioService;
 import br.edu.infnet.appimoveis.models.domain.EnderecoModels;
 import br.edu.infnet.appimoveis.models.domain.Usuario;
-import br.edu.infnet.appimoveis.model.service.UsuarioService;
 
 
 @Controller
@@ -44,7 +44,7 @@ public class UsuarioController {
 
 		usuarioService.incluir(usuario);
 		
-		msg = "O" + usuario.getNome()+ "foi cadastro com sucesso!";
+		msg = "O " + usuario.getNome()+ " foi cadastro com sucesso!";
 		
 		return "redirect:login";
 	}

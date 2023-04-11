@@ -1,31 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
     
     <div class="container">
     	<div class="row">
-    	
-    		<div class="p-3 m-3 text-center">
-    		 		
-	 			<form method="post" action="/form_cep">
-					<div class="row p-2">
-	 					
-	 					<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12 mx-auto text-center">
-	 						<label>Digite o CEP</label> <br>
-	 						<div class="row">
-	 							<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12">
-	 								<input type="number" placeholder="Digite o cep" id="cep" name="cep" required>
-	 							</div>	 							
-	 							<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12">
-	 								<input type="submit" value="Buscar CEP" class="btn-light">
-	 							</div>	 						
-	 						</div>
-	 					</div>				
-	 					
+    		
+    		<div class="col-12">
+    			<div class="p-3 m-3 text-center">
+    		
+		 			<form method="post" action="/form_cep">
+						<div class="row p-2">
+		 					
+		 					<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12 mx-auto text-center">
+		 						<label>Digite o CEP</label> <br>
+		 						<div class="row">
+		 							<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12">
+		 								<input type="number" placeholder="Digite o cep" id="cep" name="cep" required>
+		 							</div>	 							
+		 							<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12">
+		 								<input type="submit" value="Buscar CEP" class="btn-light">
+		 							</div>	 						
+		 						</div>
+		 					</div>				
+		 					
+		 				</div>
+		 			</form>
+		 		</div>
+	 			
+	 			<c:if test="${endereco.erro == 'true'}">
+	 				<div class="row">
+	 					<div class="col-xl-8 col-lg-8 col-sm-12 col-md-12 alerta mx-auto my-3">
+	 						CEP NÃO ENCONTRADO
+	 					</div>
 	 				</div>
-	 			</form>	 			
-
+	 			 </c:if>
+	 			 
+ 	 			<c:if test="${empty endereco.logradouro and empty endereco.erro}">
+	 				<div class="row">
+	 					<div class="col-xl-8 col-lg-8 col-sm-12 col-md-12 alerta-correto text-center mx-auto my-3">
+	 						Digite o CEP pra continuar.
+	 					</div>
+	 				</div>
+	 			 </c:if>
+				
+				<c:if test="${empty endereco.erro and not empty endereco.logradouro}">
 				<form method="post" action="/form_endereco">
 					<div class="row p-2">
 				 					
@@ -77,13 +96,10 @@
 	 					<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 p-2 text-left">
 	 						<label>Cargo</label> <br>
 							<select name="cargo" required>
-								<option value="vendedor">Vendedor</option>
 								<option value="representante">Representante</option>
 								<option value="administrador" selected>Administrador</option>
 							</select>
-	 					</div>
-				 		
-				 					
+	 					</div>			 					
 				 					
 						<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12 m-5 px-2 mx-auto ">
 	 							<input type="submit" value="Gravar cadastro" class="btn-light">
@@ -91,6 +107,7 @@
 			
 	 				</div>
 				</form>
+				</c:if>
 	 					
 			</div>
     	

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
     
@@ -36,6 +37,7 @@
 					<th>ID</th>
 					<th>Descrição</th>
 					<th>Será financiamento?</th>
+					<th>Deseja pronta entrega?</th>
 					<th>Data</th>
 					<th>Qual cliente</th>
 					<th>Qual imovel</th>
@@ -50,17 +52,24 @@
 				<tr>
 					<th>${list.id}</th>
 					<th>${list.descricao}</th>
+					
 					<c:if test="${list.financiamento == 'true'}">
 						<th class="seraFinanciamento">Sim</th>
 					</c:if>
-					
 					<c:if test="${list.financiamento == 'false'}">
 						<th class="naoSeraFinanciamento">Não</th>
 					</c:if>
 					
+					<c:if test="${list.prontaentrega == 'Sim'}">
+						<th class="seraFinanciamento">Sim</th>
+					</c:if>
+					<c:if test="${list.prontaentrega == 'Não'}">
+						<th class="naoSeraFinanciamento">Não</th>
+					</c:if>
+									
 					<th>${list.data}</th>
 					<th>${list.cliente.nome}</th>
-					<th>${list.imoveis.size()}</th>
+					<th>${list.imovelDesejado}</th>
 					<c:if test="${usuario.cargo == 'administrador'}">
 						<th class="alerta text-center"><a href="/pedido/${list.id}/excluir"><i class="fa-sharp fa-solid fa-trash"></i> Excluir</a></th>
 					</c:if>

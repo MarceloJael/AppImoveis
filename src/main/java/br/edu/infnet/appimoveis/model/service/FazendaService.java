@@ -26,7 +26,7 @@ public class FazendaService {
 	}
 	
 	public Collection<Fazenda> obterLista(Usuario usuario){
-		return fazendaRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "id"));
+		return fazendaRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "codigo"));
 	}
 	
 	public Fazenda obterPorId(Integer id) {

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
@@ -37,7 +37,7 @@
 					<th>Nome</th>
 					<th>E-mail</th>
 					<th>CPF</th>
-					<th>Usuario</th>
+					<th>Usuario que cadastrou</th>
 			      	<c:if test="${usuario.cargo == 'administrador'}">		      
 				      	<th></th>		
 			      	</c:if>	

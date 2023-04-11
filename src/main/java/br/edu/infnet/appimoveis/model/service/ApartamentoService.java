@@ -26,7 +26,7 @@ public class ApartamentoService {
 	}
 	
 	public Collection<Apartamento> obterLista(Usuario usuario){
-		return apartamentoRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "id"));
+		return apartamentoRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "codigo"));
 	}
 	
 	public Apartamento obterPorId(Integer id) {

@@ -10,6 +10,7 @@ import br.edu.infnet.appimoveis.model.exceptions.ValorZeradoException;
 @Table(name = "apartamento")
 public class Apartamento extends Imovel{
 	
+	private String tipo = "Apartamento";
 	private boolean salaofesta;
 	private int andar;
 	private String cor;
@@ -47,6 +48,15 @@ public class Apartamento extends Imovel{
 
 		return sb.toString();
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = "Apartamento";
+	}
+
 
 	public boolean isSalaofesta() {
 		return salaofesta;

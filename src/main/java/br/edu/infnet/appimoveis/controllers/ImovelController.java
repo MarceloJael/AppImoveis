@@ -47,5 +47,17 @@ public class ImovelController {
 		
 		return "redirect:/lista-imovel";
 	}
+	
+
+	public String incluir(Imovel imovel, @SessionAttribute("usuario") Usuario usuario) {
+		
+		imovel.setUsuario(usuario);
+
+		imovelService.incluir(imovel);
+		
+		msg = "O Imovel "+imovel.getId()+" foi cadastrada com sucesso.";
+		
+		return "redirect:/lista-imovel";
+	}
 
 }

@@ -10,6 +10,7 @@ import br.edu.infnet.appimoveis.model.exceptions.ValorZeradoException;
 @Table(name = "fazenda")
 public class Fazenda extends Imovel{
 	
+	private String tipo = "Fazenda";
 	private boolean estabulo;
 	private int hectares;
 	private String tipoplantacao;
@@ -47,6 +48,15 @@ public class Fazenda extends Imovel{
 
 		return sb.toString();
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = "Fazenda";
+	}
+
 
 	public boolean isEstabulo() {
 		return estabulo;

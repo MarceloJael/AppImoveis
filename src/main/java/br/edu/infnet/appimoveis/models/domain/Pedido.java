@@ -27,7 +27,9 @@ public class Pedido {
 	private Integer id;
 	private String descricao;
 	private boolean financiamento;
+	private String prontaentrega;
 	private LocalDateTime data;
+	private String imovelDesejado;
 	@OneToOne(cascade = CascadeType.DETACH) 
 	@JoinColumn(name = "idCliente")
 	private Cliente cliente;
@@ -89,6 +91,16 @@ public class Pedido {
 			);
 	}
 	
+	
+	
+	public String getProntaentrega() {
+		return prontaentrega;
+	}
+
+	public void setProntaentrega(String prontaentrega) {
+		this.prontaentrega = prontaentrega;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -119,6 +131,14 @@ public class Pedido {
 
 	public void setData(LocalDateTime data) {
 		this.data = data;
+	}
+
+	public String getImovelDesejado() {
+		return imovelDesejado;
+	}
+
+	public void setImovelDesejado(String imovelDesejado) {
+		this.imovelDesejado = imovelDesejado;
 	}
 
 	public Cliente getCliente() {

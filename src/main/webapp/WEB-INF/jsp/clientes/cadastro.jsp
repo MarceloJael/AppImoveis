@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
     
@@ -9,8 +10,10 @@
     		<div class="col-12">
     			<h2 class="text-center sub-tit">Cadastrar cliente</h2>
     		</div>
-    	
-    		<div class="p-3 m-3 text-center">			
+    		
+    		<div class="col-12">	
+    		<div class="p-3 m-3 text-center">
+    				
 
 				<form method="post" action="/incluir-cliente">
 					<div class="row p-2">
@@ -39,6 +42,7 @@
 				</form>
 	 					
 			</div>
+			</div>	
     	
     	</div>
     </div>

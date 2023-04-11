@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,13 +17,16 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap" rel="stylesheet">
 		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="img/favicon.png">
+		
 		<!-- Icon Awesome -->
 		<script src="https://kit.fontawesome.com/5bdb09f0fb.js" crossorigin="anonymous"></script>
 		
 		<!-- Style CSS -->
 		<link rel="stylesheet" href="css/style.css">
 		
-	    <title>AppImoveis</title>
+	    <title>AppImoveis -  Gestor de imóveis</title>
 	</head>
   <body>
   
@@ -35,10 +39,10 @@
 				</div>
 				
 			    <ul class="nav navbar-nav text-center menu-nav">
-	    			<li class="active nav-item p-1 m-1"><a href="/">Home</a></li>
 	    			<c:if test="${not empty usuario}">
-						<li class="nav-item p-1 m-1"><a href="/lista-usuario">Users</a></li>	
-		      			<li class="nav-item p-1 m-1"><a href="/lista-cliente">Clientes</a></li>
+	    				<li class="active nav-item p-1 m-1"><a href="/">Home</a></li>
+						<li class="nav-item p-1 m-1"><a href="/lista-usuario">Users</a></li>
+	      				<li class="nav-item p-1 m-1"><a href="/lista-cliente">Clientes</a></li>
 						<li class="nav-item p-1 m-1"><a href="/lista-imovel">Imoveis</a></li>
 						<li class="nav-item p-1 m-1"><a href="/lista-casa">Casas</a></li>
 						<li class="nav-item p-1 m-1"><a href="/lista-apartamento">Apartamentos</a></li>

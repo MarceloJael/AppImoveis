@@ -10,6 +10,7 @@ import br.edu.infnet.appimoveis.model.exceptions.ValorZeradoException;
 @Table(name = "casa")
 public class Casa extends Imovel {
 	
+	private String tipo = "Casa";
 	private boolean quintal;
 	private int tamanho;
 	private String cor;
@@ -47,6 +48,16 @@ public class Casa extends Imovel {
 		sb.append(cor);
 
 		return sb.toString();
+	}
+	
+	
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public boolean isQuintal() {

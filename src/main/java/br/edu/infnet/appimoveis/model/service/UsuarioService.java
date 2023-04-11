@@ -29,4 +29,5 @@ public class UsuarioService {
 	public Collection<Usuario> obterLista(){
 		return (Collection<Usuario>) usuarioRepository.findAll();
 	}
+
 }

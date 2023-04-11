@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
     
@@ -44,7 +45,7 @@
 				<form method="post" action="/incluir-pedido">
 					<div class="row p-2">
 				 					
-						<div class="col-xl-8 col-lg-8 col-sm-12 col-md-12 p-2 text-left">
+						<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 p-2 text-left">
 							<label>Descrição do pedido</label> <br>
 							<input type="text" placeholder="Digite a descrição do pedido" id="descricao" name="descricao" required>
 						</div>
@@ -52,6 +53,14 @@
 						<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 p-2 text-left">
 							<label>Deseja realizar financiamento:</label> <br>
 							Sim <input type="checkbox" value="true" id="financiamento" name="financiamento" class="input-checkbox"><br>
+						</div>
+						
+						<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 p-2 text-left">
+							<label>Quer pra pronta entrega:</label> <br>
+							<select name="prontaentrega">
+								<option value="Sim" selected >Sim</option>
+								<option value="Não">Não</option>
+							</select>
 						</div>
 				 					 					
 	 					<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12 p-2 text-left">~
@@ -68,9 +77,9 @@
 	 					<div class="col-xl-6 col-lg-6 col-sm-12 col-md-12 p-2 text-left">
 	 					
 	 						<label>Qual imovel</label> <br>
-							<select name="imovel" required>
+							<select name="imovelDesejado" required>
 								<c:forEach var="list" items="${imoveis}">
-									<option value="${list.id}">${list.id}</option>
+									<option value="${list.tipo} (COD ${list.codigo})">${list.tipo} (COD ${list.codigo})</option>
 								</c:forEach>
 							</select>
 	 						

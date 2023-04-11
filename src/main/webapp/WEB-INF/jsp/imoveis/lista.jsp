@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
@@ -29,6 +29,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Codigo</th>
+					<th>Tipo</th>
 					<th>Valor</th>
 					<th>Usuario</th>
 			      	<c:if test="${usuario.cargo == 'administrador'}">		      
@@ -41,8 +42,21 @@
 				<c:forEach var="list" items="${imoveis}">
 				<tr>
 					<th>${list.id}</th>
-					<th>${list.codigo}</th>
-					<th>${list.valor}</th>
+					<th>COD ${list.codigo}</th>
+					
+					<c:if test="${list.tipo == 'Casa'}">
+						<th><i class="fa-solid fa-house"></i> Casa</th>
+					</c:if>
+					
+					<c:if test="${list.tipo == 'Apartamento'}">
+						<th><i class="fa-sharp fa-solid fa-building"></i> Apartamento</th>
+					</c:if>
+					
+					<c:if test="${list.tipo == 'Fazenda'}">
+						<th><i class="fa-solid fa-tree-city"></i> Fazenda</th>
+					</c:if>
+					
+					<th>R$ ${list.valor}</th>
 					<th>${list.usuario.nome}</th>
 					<c:if test="${usuario.cargo == 'administrador'}">
 						<th class="alerta text-center"><a href="/imovel/${list.id}/excluir"><i class="fa-sharp fa-solid fa-trash"></i> Excluir</a></th>

@@ -27,6 +27,7 @@ public abstract class Imovel {
 	private Integer id;
 	private String codigo;
 	private float valor;
+	private String prontaentrega;
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
@@ -66,6 +67,16 @@ public abstract class Imovel {
 		return sb.toString();
 	}
 	
+	
+	
+	public String getProntaentrega() {
+		return prontaentrega;
+	}
+
+	public void setProntaentrega(String prontaentrega) {
+		this.prontaentrega = prontaentrega;
+	}
+
 	public String getCodigo() {
 		return codigo;
 	}

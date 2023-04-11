@@ -8,6 +8,7 @@ public class EnderecoModels {
 	private String bairro;
 	private String localidade;
 	private String uf;
+	private String erro;
 
 	@Override
 	public String toString() {
@@ -58,5 +59,12 @@ public class EnderecoModels {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
+	public String getErro() {
+		return erro;
+	}
 
+	public void setErro(String erro) {
+		this.erro = erro;
+	}
+	
 }

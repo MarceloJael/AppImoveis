@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
     <c:import url="/WEB-INF/jsp/menu.jsp"/>
@@ -23,11 +23,12 @@
 		
 		<h2 class="text-center sub-tit"><i class="fa-solid fa-tree-city"></i> Lista de fazendas</h2>
 		
-		<div class="row py-3">
-			<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 mx-auto py-2 text-center">
-				<a href="cadastro-fazenda"><button class="btn-dark"><i class="fa-sharp fa-solid fa-plus"></i> Cadastrar nova fazenda</button></a>
+		
+			<div class="row py-3">
+				<div class="col-xl-4 col-lg-4 col-sm-12 col-md-12 mx-auto py-2 text-center">
+					<a href="cadastro-fazenda"><button class="btn-dark"><i class="fa-sharp fa-solid fa-plus"></i> Cadastrar nova fazenda</button></a>
+				</div>
 			</div>
-		</div>
 		
 		<table>
 		
@@ -37,6 +38,7 @@
 					<th>Codigo</th>
 					<th>Valor</th>
 					<th>Possui estabulo</th>
+					<th>Disponivel pra pronta entrega?</th>
 					<th>Tamanho da fazenda</th>
 					<th>tipo de plantacao</th>
 			      	<c:if test="${usuario.cargo == 'administrador'}">		      
@@ -49,13 +51,20 @@
 				<c:forEach var="list" items="${fazendas}">
 				<tr>
 					<th>${list.id}</th>
-					<th>${list.codigo}</th>					
-					<th>${list.valor}</th>
+					<th>COD ${list.codigo}</th>					
+					<th>R$ ${list.valor}</th>
 
 					<c:if test="${list.estabulo == 'true'}">
 						<th class="seraFinanciamento">Sim</th>
 					</c:if>
 					<c:if test="${list.estabulo == 'false'}">
+						<th class="naoSeraFinanciamento">Não</th>
+					</c:if>
+					
+					<c:if test="${list.prontaentrega == 'Sim'}">
+						<th class="seraFinanciamento">Sim</th>
+					</c:if>
+					<c:if test="${list.prontaentrega == 'Não'}">
 						<th class="naoSeraFinanciamento">Não</th>
 					</c:if>
 

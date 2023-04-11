@@ -1,0 +1,4 @@
+1;Marcelo Jael;marcelojael@marcelojael.com;marcelojael@marcelojael.com;(37) 9.8827-7690;35501-346;Avenida Brasilia;Belvedere;Divinopolis;MG;administrador;
+2;Cliente 1;123;cliente1@appimoveis.com.br;(12) 9.9354-6012;12520-240;Avenida Integração;Vila Santa Rita;Guaratinguetá;SP;representante;
+3;Cliente 2;123;cliente2@appimoveis.com.br;(12) 9.9354-6012;12520-240;Avenida Integração;Vila Santa Rita;Guaratinguetá;SP;representante;
+4;Cliente 3;123;cliente3@appimoveis.com.br;(12) 9.9354-6012;12520-240;Avenida Integração;Vila Santa Rita;Guaratinguetá;SP;representante;

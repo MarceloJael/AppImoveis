@@ -3,6 +3,8 @@ package br.edu.infnet.appimoveis.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appimoveis.model.repository.ImovelRepository;
@@ -14,6 +16,10 @@ public class ImovelService {
 	
 	@Autowired
 	private ImovelRepository imovelRepository;
+	
+	public Imovel incluir(Imovel imovel) {
+		return imovelRepository.save(imovel);
+	}
 
 	public void excluir(Integer id) {
 		imovelRepository.deleteById(id);
@@ -24,7 +30,7 @@ public class ImovelService {
 	}
 	
 	public Collection<Imovel> obterLista(Usuario usuario){
-		return (Collection<Imovel>) imovelRepository.obterLista(usuario.getId());
+		return (Collection<Imovel>) imovelRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "codigo"));
 	}
 
 	public Imovel obterPorId(Integer id) {

@@ -26,7 +26,7 @@ public class CasaService {
 	}
 	
 	public Collection<Casa> obterLista(Usuario usuario){
-		return casaRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "id"));
+		return casaRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "codigo"));
 	}
 	
 	public Casa obterPorId(Integer id) {
